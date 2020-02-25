@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,800,900,900i&display=swap&subset=latin-ext");
+
+//variables
+
+$black: #000000;
+$white: #f5f5f5;
+$info: #1c5c1c;
+$error: #e61919;
+
+$red: rgb(184, 6, 6);
+$light-grey: #dddddd;
+$grey: #525050;
+$dark-grey: #242121;
+$beige: #f2ebea;
+$dark-green: #6d7973;
+
+//EXTENDS:
+
+.btn {
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 1em 1.5em;
+  color: $white;
+  background: $red;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  outline: 2px solid $red;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    color: $red;
+    background: $black;
+    outline-color: $red;
+    outline-offset: -6px;
+  }
+}
+
+.btn-night {
+  position: relative;
+  background: $beige;
+  color: $black;
+  outline: 0;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    color: $white;
+    z-index: 10;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        #989898;
+    background-blend-mode: multiply, multiply;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: 300ms ease-in;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+//
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background: $beige;
+
+  &.night {
+    background-image: url("/imgs/chris-murray-western-unsplash.jpg");
+    background-size: cover;
+  }
+}
+
+//HEADER
+
+header {
+  .nav {
+    background: rgba($light-grey, 0.8);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+    body.night & {
+      background: none;
+    }
+
+    .logo {
+      display: flex;
+
+      &__title {
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $black;
+
+        body.night & {
+          color: $beige;
+        }
+
+        &::first-letter {
+          color: $red;
+          font-size: 4rem;
+          letter-spacing: 6px;
+        }
+      }
+
+      &__dot {
+        color: $red;
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+//APPEARANCE TOGGLE
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+
+  &:checked + label {
+    background: $beige;
+
+    &::after {
+      left: calc(100% - 5px);
+      transform: translateX(-100%) scale(1.2);
+      box-shadow: inset (5px 2px 10px rgba($light-grey, 0.3));
+    }
+  }
+}
+
+.switch {
+  cursor: pointer;
+  position: relative;
+  width: 80px;
+  height: 35px;
+  background: $dark-grey;
+  border-radius: 50px;
+  box-shadow: inset (1px 2px 10px rgba($grey, 0.2));
+  z-index: 100;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 25px;
+    height: 25px;
+    background: $red;
+    border-radius: 45px;
+    transition: 0.3s;
+  }
+
+  &:active::after {
+    width: 65px;
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+
+  &:hover::after {
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+}
+
+//OVERLAY ANIMATION
+
+.overlay {
+  &::before {
+    animation: grain 1s steps(10) infinite;
+    background-image: url(../imgs/grains.png);
+    content: "";
+    height: 300%;
+    left: -50%;
+    opacity: 0.48;
+    position: fixed;
+    top: -110%;
+    width: 300%;
+    z-index: -1;
+    display: none;
+
+    body.night & {
+      display: block;
+    }
+  }
+
+  @keyframes grain {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    10% {
+      transform: translate(-5%, -10%);
+    }
+
+    20% {
+      transform: translate(-15%, 5%);
+    }
+
+    30% {
+      transform: translate(7%, -25%);
+    }
+
+    40% {
+      transform: translate(-5%, 25%);
+    }
+
+    50% {
+      transform: translate(-15%, 10%);
+    }
+
+    60% {
+      transform: translate(15%, 0%);
+    }
+
+    70% {
+      transform: translate(0%, 15%);
+    }
+
+    80% {
+      transform: translate(3%, 35%);
+    }
+
+    90% {
+      transform: translate(-10%, 10%);
+    }
+  }
+}
+
+// SELECT LIST
+
+.selectBox {
+  position: relative;
+  height: 40vh;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  &__bcg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: none;
+    background-color: rgba($light-grey, 0.5);
+    background-image: url(/imgs/denise-jans-film-reel-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.6) blur(0.8px);
+
+    body.night & {
+      background: none;
+    }
+  }
+
+  &__container {
+    background: rgba($black, 0.9);
+    padding: 1em;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+
+    body.night & {
+      background: rgba($black, 0.5);
+    }
+  }
+
+  &__label {
+    color: $beige;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  &__filter {
+    cursor: pointer;
+    padding: 1em 1.5em;
+    width: 40%;
+    background: rgba($red, 0.9);
+    color: $white;
+    border-radius: 2px;
+    border: 0;
+    outline: none;
+    overflow-y: auto;
+    transition: 250ms ease-in-out;
+
+    option {
+      color: $red;
+      background: $black;
+    }
+  }
+
+  &__button {
+    margin-left: 2em;
+    z-index: 100;
+    @extend .btn;
+
+    body.night & {
+      @extend .btn-night;
+    }
+  }
+}
+
+// DISPLAYING MOVIES SECTION
+
+.moviesSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .displayList {
+    max-width: 90%;
+    padding: 3em;
+    background: transparent;
+    color: $grey;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-gap: 1em;
+    box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .even,
+  .odd,
+  .even-night,
+  .odd-night {
+    padding: 1em;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    text-transform: capitalize;
+    text-align: center;
+    box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
+
+    h2 {
+      color: $black;
+    }
+
+    h3 {
+      color: $beige;
+    }
+  }
+
+  .even {
+    background: rgba($black, 0.8);
+
+    h2 {
+      color: $red;
+    }
+  }
+
+  .odd {
+    background: $red;
+  }
+
+  .even-night,
+  .odd-night {
+    border-radius: 20px;
+  }
+
+  .even-night {
+    background: rgba($dark-green, 0.5);
+
+    h3 {
+      color: $red;
+    }
+  }
+
+  .odd-night {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        #989898;
+    background-blend-mode: multiply, multiply;
+    h2 {
+      color: $red;
+    }
+    h3 {
+      color: $black;
+    }
+  }
+}
+
+//ASIDE
+aside {
+  padding: 2em;
+  height: 30vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .amountMoviesBcg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($beige, 0.6);
+    z-index: 1;
+    background-image: url(/imgs/denise-jans-film-reel-unsplash.jpg);
+    background-size: contain;
+    background-position: center;
+    filter: grayscale(0.6);
+
+    body.night & {
+      background: rgba($beige, 0.8);
+    }
+  }
+
+  .amountMovies {
+    position: absolute;
+    max-width: 18em;
+    background: $black;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: $red;
+    padding: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: inset (10px 20px 30px rgba($grey, 0.2));
+    z-index: 100;
+
+    body.night & {
+      background: $light-grey;
+      box-shadow: inset (1px 2px 10px rgba($grey, 0.6));
+      color: $grey;
+    }
+  }
+}
+
+//ADDING FORM
+
+.formSection {
+  padding: 1em;
+  display: grid;
+  place-items: center;
+  background: $dark-grey;
+  color: $light-grey;
+  z-index: 100;
+
+  .form {
+    padding: 2em;
+    display: grid;
+    place-items: center;
+    width: 80%;
+    z-index: 100;
+
+    &__field {
+      height: 2em;
+      width: 80%;
+      background: $light-grey;
+      border: none;
+      text-transform: uppercase;
+      color: $grey;
+    }
+
+    &__title {
+      color: $red;
+    }
+
+    &__btn {
+      border: 2px solid $red;
+
+      @extend .btn;
+    }
+
+    &__message {
+      color: $info;
+    }
+
+    &__error {
+      color: $error;
+    }
+  }
+}
+
+//FOOTER
+
+.footer {
+  padding: 0.2em;
+  background: $black;
+  color: $grey;
+  text-align: center;
+  line-height: 1.6;
+
+  z-index: 100;
+
+  strong {
+    font-weight: 400;
+  }
+
+  a {
+    text-decoration: none;
+    color: $grey;
+  }
+}

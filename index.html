@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filmoteka</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <h1 class="logo__title">Filmoteka</h1>
+                <i class="logo__dot">.</i>
+            </div>
+            <input type="checkbox" id="switch" /><label class="switch" for="switch"></label>
+        </nav>
+    </header>
+    <main>
+
+        <section class="selectBox">
+            <div class="selectBox__bcg"></div>
+            <div class="selectBox__container">
+
+                <label for=" filter" class="selectBox__label">Filtruj według daty:</label>
+                <select class="selectBox__filter" id="filter">
+                </select>
+            </div>
+            <a href="#" class="selectBox__button" id="allMovies">Pokaż wszystkie filmy</a>
+        </section>
+
+        <section class="moviesSection">
+
+            <div class="displayList" id="displayList"></div>
+        </section>
+        <div class="overlay">
+            <aside>
+                <div id="amountMovies" class="amountMovies"></div>
+                <div class="amountMoviesBcg"></div>
+
+            </aside>
+        </div>
+        <section class="formSection">
+            <h3 class="form__title">Dodaj nowy film:</h3>
+
+            <form class="form" name="createNewMovie" id="addingForm" autocomplete="off">
+                <label for="createTitle">Tytuł: </label>
+                <input class="form__field" type="text" name="createTitle" id="createTitle" required
+                    autocomplete="off"><br />
+
+                <label for="createYear">Rok: </label>
+                <input class="form__field" type="text" name="createYear" id="createYear" required
+                    autocomplete="off"><br />
+                <input class="form__btn" type="submit" id="addingBtn" value='Dodaj'>
+            </form>
+            <span class="form__message" id="message"></span><br />
+            <span class="form__error" id="error"></span>
+        </section>
+    </main>
+    <footer class="footer"><span>&copy; Copyrights 2019.</span>
+        <p>
+            Created by <strong><a href="http://www.beatamaro.eu" target="_blank">Beata Maro.</a></strong>
+        </p>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
