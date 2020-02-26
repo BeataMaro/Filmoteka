@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,800,900,900i&display=swap&subset=latin-ext");
-
-.btn,
-.selectBox__button,
-.formSection .form__btn {
+.btn, .selectBox__button, .formSection .form__btn {
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -19,17 +16,14 @@
   transition: all 0.3s ease-in;
 }
 
-.btn:hover,
-.selectBox__button:hover,
-.formSection .form__btn:hover {
+.btn:hover, .selectBox__button:hover, .formSection .form__btn:hover {
   color: #b80606;
   background: #000000;
   outline-color: #b80606;
   outline-offset: -6px;
 }
 
-.btn-night,
-body.night .selectBox__button {
+.btn-night, body.night .selectBox__button {
   position: relative;
   background: #f2ebea;
   color: #000000;
@@ -38,14 +32,12 @@ body.night .selectBox__button {
   transition: 0.3s ease-in;
 }
 
-.btn-night:hover,
-body.night .selectBox__button:hover {
+.btn-night:hover, body.night .selectBox__button:hover {
   color: #f5f5f5;
   z-index: 10;
 }
 
-.btn-night::before,
-body.night .selectBox__button::before {
+.btn-night::before, body.night .selectBox__button::before {
   content: "";
   position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.15))), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
@@ -60,8 +52,7 @@ body.night .selectBox__button::before {
   z-index: -1;
 }
 
-.btn-night:hover::before,
-body.night .selectBox__button:hover::before {
+.btn-night:hover::before, body.night .selectBox__button:hover::before {
   width: 100%;
 }
 
@@ -69,7 +60,7 @@ body.night .selectBox__button:hover::before {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -81,7 +72,7 @@ body {
 }
 
 body.night {
-  background-image: url("../../imgs/chris-murray-western-unsplash.jpg");
+  background-image: url(../imgs/chris-murray-western-unsplash.jpg);
   background-size: cover;
 }
 
@@ -92,11 +83,11 @@ header .nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 100;
 }
 
@@ -138,16 +129,16 @@ input[type="checkbox"] {
   visibility: hidden;
 }
 
-input[type="checkbox"]:checked+label {
+input[type="checkbox"]:checked + label {
   background: #f2ebea;
 }
 
-input[type="checkbox"]:checked+label::after {
+input[type="checkbox"]:checked + label::after {
   left: calc(100% - 5px);
   -webkit-transform: translateX(-100%) scale(1.2);
-  transform: translateX(-100%) scale(1.2);
+          transform: translateX(-100%) scale(1.2);
   -webkit-box-shadow: inset 5px 2px 10px rgba(221, 221, 221, 0.3);
-  box-shadow: inset 5px 2px 10px rgba(221, 221, 221, 0.3);
+          box-shadow: inset 5px 2px 10px rgba(221, 221, 221, 0.3);
 }
 
 .switch {
@@ -158,7 +149,7 @@ input[type="checkbox"]:checked+label::after {
   background: #242121;
   border-radius: 50px;
   -webkit-box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.2);
-  box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.2);
+          box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.2);
   z-index: 100;
 }
 
@@ -178,22 +169,22 @@ input[type="checkbox"]:checked+label::after {
 .switch:active::after {
   width: 65px;
   -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+          transform: scale(1.2);
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
 }
 
 .switch:hover::after {
   -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+          transform: scale(1.2);
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
 }
 
 .overlay::before {
   -webkit-animation: grain 1s steps(10) infinite;
-  animation: grain 1s steps(10) infinite;
-  background-image: url(../../imgs/grains.png);
+          animation: grain 1s steps(10) infinite;
+  background-image: url(../imgs/grains.png);
   content: "";
   height: 300%;
   left: -50%;
@@ -210,110 +201,90 @@ body.night .overlay::before {
 }
 
 @-webkit-keyframes grain {
-
   0%,
   100% {
     -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+            transform: translate(0, 0);
   }
-
   10% {
     -webkit-transform: translate(-5%, -10%);
-    transform: translate(-5%, -10%);
+            transform: translate(-5%, -10%);
   }
-
   20% {
     -webkit-transform: translate(-15%, 5%);
-    transform: translate(-15%, 5%);
+            transform: translate(-15%, 5%);
   }
-
   30% {
     -webkit-transform: translate(7%, -25%);
-    transform: translate(7%, -25%);
+            transform: translate(7%, -25%);
   }
-
   40% {
     -webkit-transform: translate(-5%, 25%);
-    transform: translate(-5%, 25%);
+            transform: translate(-5%, 25%);
   }
-
   50% {
     -webkit-transform: translate(-15%, 10%);
-    transform: translate(-15%, 10%);
+            transform: translate(-15%, 10%);
   }
-
   60% {
     -webkit-transform: translate(15%, 0%);
-    transform: translate(15%, 0%);
+            transform: translate(15%, 0%);
   }
-
   70% {
     -webkit-transform: translate(0%, 15%);
-    transform: translate(0%, 15%);
+            transform: translate(0%, 15%);
   }
-
   80% {
     -webkit-transform: translate(3%, 35%);
-    transform: translate(3%, 35%);
+            transform: translate(3%, 35%);
   }
-
   90% {
     -webkit-transform: translate(-10%, 10%);
-    transform: translate(-10%, 10%);
+            transform: translate(-10%, 10%);
   }
 }
 
 @keyframes grain {
-
   0%,
   100% {
     -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+            transform: translate(0, 0);
   }
-
   10% {
     -webkit-transform: translate(-5%, -10%);
-    transform: translate(-5%, -10%);
+            transform: translate(-5%, -10%);
   }
-
   20% {
     -webkit-transform: translate(-15%, 5%);
-    transform: translate(-15%, 5%);
+            transform: translate(-15%, 5%);
   }
-
   30% {
     -webkit-transform: translate(7%, -25%);
-    transform: translate(7%, -25%);
+            transform: translate(7%, -25%);
   }
-
   40% {
     -webkit-transform: translate(-5%, 25%);
-    transform: translate(-5%, 25%);
+            transform: translate(-5%, 25%);
   }
-
   50% {
     -webkit-transform: translate(-15%, 10%);
-    transform: translate(-15%, 10%);
+            transform: translate(-15%, 10%);
   }
-
   60% {
     -webkit-transform: translate(15%, 0%);
-    transform: translate(15%, 0%);
+            transform: translate(15%, 0%);
   }
-
   70% {
     -webkit-transform: translate(0%, 15%);
-    transform: translate(0%, 15%);
+            transform: translate(0%, 15%);
   }
-
   80% {
     -webkit-transform: translate(3%, 35%);
-    transform: translate(3%, 35%);
+            transform: translate(3%, 35%);
   }
-
   90% {
     -webkit-transform: translate(-10%, 10%);
-    transform: translate(-10%, 10%);
+            transform: translate(-10%, 10%);
   }
 }
 
@@ -326,14 +297,14 @@ body.night .overlay::before {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .selectBox__bcg {
@@ -343,12 +314,12 @@ body.night .overlay::before {
   bottom: 0;
   right: 0;
   background-image: none;
-  /* background-color: rgba(221, 221, 221, 0.5); */
-  background-image: url(../../imgs/denise-jans-film-reel-unsplash.jpg);
+  background-color: rgba(221, 221, 221, 0.5);
+  background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
   background-size: cover;
   background-position: center;
   -webkit-filter: grayscale(0.6) blur(0.8px);
-  filter: grayscale(0.6) blur(0.8px);
+          filter: grayscale(0.6) blur(0.8px);
 }
 
 body.night .selectBox__bcg {
@@ -363,10 +334,10 @@ body.night .selectBox__bcg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   z-index: 100;
 }
 
@@ -409,11 +380,11 @@ body.night .selectBox__container {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .moviesSection .displayList {
@@ -425,10 +396,10 @@ body.night .selectBox__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(15em, 1fr))[auto-fit];
-  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
   grid-gap: 1em;
   -webkit-box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
 }
 
 .moviesSection .even,
@@ -443,7 +414,7 @@ body.night .selectBox__container {
   text-transform: capitalize;
   text-align: center;
   -webkit-box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
 }
 
 .moviesSection .even h2,
@@ -507,11 +478,11 @@ aside {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 aside .amountMoviesBcg {
@@ -526,7 +497,7 @@ aside .amountMoviesBcg {
   background-size: contain;
   background-position: center;
   -webkit-filter: grayscale(0.6);
-  filter: grayscale(0.6);
+          filter: grayscale(0.6);
 }
 
 body.night aside .amountMoviesBcg {
@@ -545,14 +516,14 @@ aside .amountMovies {
   text-transform: uppercase;
   font-weight: bold;
   -webkit-box-shadow: inset 10px 20px 30px rgba(82, 80, 80, 0.2);
-  box-shadow: inset 10px 20px 30px rgba(82, 80, 80, 0.2);
+          box-shadow: inset 10px 20px 30px rgba(82, 80, 80, 0.2);
   z-index: 100;
 }
 
 body.night aside .amountMovies {
   background: #dddddd;
   -webkit-box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.6);
-  box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.6);
+          box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.6);
   color: #525050;
 }
 
@@ -617,5 +588,4 @@ body.night aside .amountMovies {
   text-decoration: none;
   color: #525050;
 }
-
 /*# sourceMappingURL=style.css.map */
