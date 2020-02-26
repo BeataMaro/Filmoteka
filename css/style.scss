@@ -175,7 +175,7 @@ input[type="checkbox"] {
     height: 25px;
     background: $red;
     border-radius: 45px;
-    transition: 0.3s;
+    transition: 250ms ease-in-out;
   }
 
   &:active::after {

@@ -163,8 +163,8 @@ input[type="checkbox"]:checked + label::after {
   height: 25px;
   background: #b80606;
   border-radius: 45px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
 .switch:active::after {
