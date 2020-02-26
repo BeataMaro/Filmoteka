@@ -91,6 +91,7 @@ body {
   &.night {
     background-image: url(../imgs/chris-murray-western-unsplash.jpg);
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -277,6 +278,8 @@ input[type="checkbox"] {
     background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+
     filter: grayscale(0.6) blur(0.8px);
 
     body.night & {

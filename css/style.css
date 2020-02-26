@@ -74,6 +74,7 @@ body {
 body.night {
   background-image: url(../imgs/chris-murray-western-unsplash.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 header .nav {
@@ -318,6 +319,7 @@ body.night .overlay::before {
   background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   -webkit-filter: grayscale(0.6) blur(0.8px);
           filter: grayscale(0.6) blur(0.8px);
 }
