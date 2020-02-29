@@ -53,12 +53,17 @@ $dark-green: #6d7973;
   &::before {
     content: "";
     position: absolute;
-    background: linear-gradient(to bottom,
+    background: linear-gradient(
+        to bottom,
         rgba(255, 255, 255, 0.15) 0%,
-        rgba(0, 0, 0, 0.15) 100%),
-      radial-gradient(at top center,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 120%) #989898;
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        #989898;
     background-blend-mode: multiply, multiply;
     top: 0;
     left: 0;
@@ -145,7 +150,7 @@ input[type="checkbox"] {
   width: 0;
   visibility: hidden;
 
-  &:checked+label {
+  &:checked + label {
     background: $beige;
 
     &::after {
@@ -212,7 +217,6 @@ input[type="checkbox"] {
   }
 
   @keyframes grain {
-
     0%,
     100% {
       transform: translate(0, 0);
@@ -279,8 +283,7 @@ input[type="checkbox"] {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
-    filter: grayscale(0.6) blur(0.8px);
+    filter: blur(0.3px);
 
     body.night & {
       background: none;
@@ -289,11 +292,11 @@ input[type="checkbox"] {
 
   &__container {
     background: rgba($black, 0.9);
+    border-radius: 4px;
     padding: 1em;
     width: 50%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
     z-index: 100;
 
     body.night & {
@@ -310,13 +313,13 @@ input[type="checkbox"] {
   &__filter {
     cursor: pointer;
     padding: 1em 1.5em;
-    width: 40%;
+    width: 100%;
     background: rgba($red, 0.9);
     color: $white;
     border-radius: 2px;
     border: 0;
     outline: none;
-    overflow-y: auto;
+    overflow-y: hidden;
     transition: 250ms ease-in-out;
 
     option {
@@ -402,12 +405,17 @@ input[type="checkbox"] {
   }
 
   .odd-night {
-    background: linear-gradient(to bottom,
+    background: linear-gradient(
+        to bottom,
         rgba(255, 255, 255, 0.15) 0%,
-        rgba(0, 0, 0, 0.15) 100%),
-      radial-gradient(at top center,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 120%) #989898;
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        #989898;
     background-blend-mode: multiply, multiply;
 
     h2 {
@@ -490,6 +498,7 @@ aside {
       height: 2em;
       width: 80%;
       background: $light-grey;
+      border-radius: 4px;
       border: none;
       text-transform: uppercase;
       color: $grey;
