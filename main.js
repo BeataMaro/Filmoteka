@@ -131,13 +131,17 @@ function createOptions(list) {
         option.value = list[i]
         const select = document.getElementById('filter');
         select.appendChild(option)
+
     }
 }
 
 //REMOVING DUPLICATED YEARS
 
 let yearsOptions = [...new Set(yearList)];
+yearsOptions[0] = 'Filtruj według daty';
+
 createOptions(yearsOptions);
+
 
 //SEARCHING BY YEAR
 
@@ -155,7 +159,8 @@ function searchByYear() {
                 const tileYear = item.querySelector('h3').textContent;
                 if (tileYear === yearValue) {
                     item.style.display = "grid";
-
+                } else if (selectList[0].value == yearValue) {
+                    return
                 } else {
                     item.style.display = "none";
                 }

@@ -53,17 +53,12 @@ $dark-green: #6d7973;
   &::before {
     content: "";
     position: absolute;
-    background: linear-gradient(
-        to bottom,
+    background: linear-gradient(to bottom,
         rgba(255, 255, 255, 0.15) 0%,
-        rgba(0, 0, 0, 0.15) 100%
-      ),
-      radial-gradient(
-          at top center,
-          rgba(255, 255, 255, 0.4) 0%,
-          rgba(0, 0, 0, 0.4) 120%
-        )
-        #989898;
+        rgba(0, 0, 0, 0.15) 100%),
+      radial-gradient(at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%) #989898;
     background-blend-mode: multiply, multiply;
     top: 0;
     left: 0;
@@ -150,7 +145,7 @@ input[type="checkbox"] {
   width: 0;
   visibility: hidden;
 
-  &:checked + label {
+  &:checked+label {
     background: $beige;
 
     &::after {
@@ -217,6 +212,7 @@ input[type="checkbox"] {
   }
 
   @keyframes grain {
+
     0%,
     100% {
       transform: translate(0, 0);
@@ -289,6 +285,7 @@ input[type="checkbox"] {
     @media screen and (min-width: 768px) {
       background-position: right;
     }
+
     @media screen and (min-width: 1200px) {
       background-position: center;
     }
@@ -303,8 +300,6 @@ input[type="checkbox"] {
     border-radius: 4px;
     padding: 1em;
     width: 70%;
-    display: flex;
-    flex-direction: column;
     z-index: 100;
 
     body.night & {
@@ -316,22 +311,18 @@ input[type="checkbox"] {
     }
   }
 
-  &__label {
-    color: $beige;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-
   &__filter {
     cursor: pointer;
     padding: 1em 1.5em;
     width: 100%;
     background: rgba($grey, 0.7);
-    color: $white;
     border-radius: 2px;
-    border: 0;
+    border: 10px solid #514a4a;
+    color: $beige;
+    letter-spacing: 1px;
+    font-weight: 100;
     outline: none;
-    overflow-y: hidden;
+    overflow-x: hidden;
     transition: 250ms ease-in-out;
 
     option {
@@ -348,6 +339,7 @@ input[type="checkbox"] {
     body.night & {
       @extend .btn-night;
     }
+
     @media screen and (max-width: 768px) {
       margin: 0;
     }
@@ -420,17 +412,12 @@ input[type="checkbox"] {
   }
 
   .odd-night {
-    background: linear-gradient(
-        to bottom,
+    background: linear-gradient(to bottom,
         rgba(255, 255, 255, 0.15) 0%,
-        rgba(0, 0, 0, 0.15) 100%
-      ),
-      radial-gradient(
-          at top center,
-          rgba(255, 255, 255, 0.4) 0%,
-          rgba(0, 0, 0, 0.4) 120%
-        )
-        #989898;
+        rgba(0, 0, 0, 0.15) 100%),
+      radial-gradient(at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%) #989898;
     background-blend-mode: multiply, multiply;
 
     h2 {
@@ -499,6 +486,7 @@ aside {
   align-items: center;
   background: $dark-grey;
   color: $light-grey;
+
   .form {
     padding: 2em;
     display: grid;
@@ -518,6 +506,7 @@ aside {
       @media screen and (min-width: 768px) {
         width: 50%;
       }
+
       &:focus {
         outline: 1px solid orangered;
       }
