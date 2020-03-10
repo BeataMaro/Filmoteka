@@ -481,9 +481,8 @@ aside {
 
 .formSection {
   padding: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   background: $dark-grey;
   color: $light-grey;
 

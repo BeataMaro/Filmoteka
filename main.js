@@ -77,7 +77,6 @@ function createTiles(el1, el2) {
 
             divItem.setAttribute('class', 'odd');
         }
-
     }
 
     //NIGHT MODE
@@ -138,7 +137,14 @@ function createOptions(list) {
 //REMOVING DUPLICATED YEARS
 
 let yearsOptions = [...new Set(yearList)];
+
+//SORTING YEARS LIST
+yearsOptions.sort((a, b) => b - a);
+
+
+//LABEL OF SELECT LIST
 yearsOptions[0] = 'Filtruj według daty';
+
 
 createOptions(yearsOptions);
 
