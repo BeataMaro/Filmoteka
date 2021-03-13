@@ -12,6 +12,7 @@ html {
 
 body {
   background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
 body.night {
@@ -152,11 +153,13 @@ input[type="checkbox"]:checked + label::after {
   position: relative;
   width: 80px;
   height: 35px;
-  background: #242121;
+  background-color: #242121;
   border-radius: 50px;
   -webkit-box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.2);
           box-shadow: inset 1px 2px 10px rgba(82, 80, 80, 0.2);
   z-index: 100;
+  -webkit-animation: pump 2s infinite alternate;
+          animation: pump 2s infinite alternate;
 }
 
 .switch::after {
@@ -294,6 +297,28 @@ body.night .overlay::before {
   }
 }
 
+@-webkit-keyframes pump {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes pump {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
 .selectBox {
   position: relative;
   height: 40vh;
@@ -409,11 +434,11 @@ body.night .selectBox__container {
 }
 
 .moviesSection .displayList {
+  margin: 1em;
   width: 90%;
   padding: 3em;
   background: transparent;
   color: #525050;
-  text-align: center;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(15em, 1fr))[auto-fit];
