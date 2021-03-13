@@ -1,18 +1,40 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,800,900,900i&display=swap&subset=latin-ext");
-
-//variables
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;500;700&display=swap");
 
 $black: #000000;
 $white: #f5f5f5;
-$info: #1c5c1c;
 $error: #e61919;
 
-$red: rgb(184, 6, 6);
+$green: #00b060;
 $light-grey: #dddddd;
 $grey: #525050;
 $dark-grey: #242121;
 $beige: #f2ebea;
 $dark-green: #6d7973;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: $white;
+
+  &.night {
+    background-image: url(../imgs/chris-murray-western-unsplash.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
 
 //EXTENDS:
 
@@ -22,25 +44,25 @@ $dark-green: #6d7973;
   font-size: 0.8rem;
   font-weight: bold;
   padding: 1em 1.5em;
-  color: $white;
-  background: $red;
+  color: $beige;
+  background-color: $black;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  outline: 2px solid $red;
+  outline: 2px solid $dark-grey;
   transition: all 0.3s ease-in;
 
   &:hover {
-    color: $red;
-    background: $black;
-    outline-color: $red;
+    color: $green;
+    background-color: $black;
+    outline-color: $green;
     outline-offset: -6px;
   }
 }
 
 .btn-night {
   position: relative;
-  background: $beige;
+  background-color: $beige;
   color: $black;
   outline: 0;
   transition: 0.3s ease-in;
@@ -53,12 +75,17 @@ $dark-green: #6d7973;
   &::before {
     content: "";
     position: absolute;
-    background: linear-gradient(to bottom,
+    background: linear-gradient(
+        to bottom,
         rgba(255, 255, 255, 0.15) 0%,
-        rgba(0, 0, 0, 0.15) 100%),
-      radial-gradient(at top center,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 120%) #989898;
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        #989898;
     background-blend-mode: multiply, multiply;
     top: 0;
     left: 0;
@@ -73,33 +100,11 @@ $dark-green: #6d7973;
   }
 }
 
-//
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Nunito", sans-serif;
-}
-
-body {
-  background: $beige;
-
-  &.night {
-    background-image: url(../imgs/chris-murray-western-unsplash.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
 //HEADER
 
 header {
   .nav {
-    background: rgba($light-grey, 0.8);
+    background: rgba($white, 0.8);
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -115,7 +120,7 @@ header {
 
       &__title {
         font-size: 2rem;
-        font-weight: 900;
+        font-weight: 700;
         text-transform: uppercase;
         color: $black;
 
@@ -124,14 +129,13 @@ header {
         }
 
         &::first-letter {
-          color: $red;
+          color: #ff4500;
           font-size: 4rem;
-          letter-spacing: 6px;
         }
       }
 
       &__dot {
-        color: $red;
+        color: orangered;
         font-size: 4rem;
       }
     }
@@ -145,7 +149,7 @@ input[type="checkbox"] {
   width: 0;
   visibility: hidden;
 
-  &:checked+label {
+  &:checked + label {
     background: $beige;
 
     &::after {
@@ -166,14 +170,14 @@ input[type="checkbox"] {
   box-shadow: inset (1px 2px 10px rgba($grey, 0.2));
   z-index: 100;
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     top: 5px;
     left: 5px;
     width: 25px;
     height: 25px;
-    background: $red;
+    background: $green;
     border-radius: 45px;
     transition: 250ms ease-in-out;
   }
@@ -212,7 +216,6 @@ input[type="checkbox"] {
   }
 
   @keyframes grain {
-
     0%,
     100% {
       transform: translate(0, 0);
@@ -266,7 +269,6 @@ input[type="checkbox"] {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-
   &__bcg {
     position: absolute;
     top: 0;
@@ -275,7 +277,7 @@ input[type="checkbox"] {
     right: 0;
     background-image: none;
     background-color: rgba($light-grey, 0.5);
-    background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
+    background-image: url(../imgs/noom-peerapong-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 80%;
@@ -296,14 +298,14 @@ input[type="checkbox"] {
   }
 
   &__container {
-    background: rgba($black, 0.9);
+    background-color: rgba($black, 0.9);
     border-radius: 4px;
     padding: 1em;
     width: 70%;
     z-index: 100;
 
     body.night & {
-      background: rgba($black, 0.5);
+      background-color: rgba($black, 0.5);
     }
 
     @media screen and (min-width: 768px) {
@@ -315,7 +317,7 @@ input[type="checkbox"] {
     cursor: pointer;
     padding: 1em 1.5em;
     width: 100%;
-    background: rgba($grey, 0.7);
+    background-color: rgba($grey, 0.7);
     border-radius: 2px;
     border: 10px solid #514a4a;
     color: $beige;
@@ -327,7 +329,7 @@ input[type="checkbox"] {
 
     option {
       color: $grey;
-      background: $black;
+      background-color: $black;
     }
   }
 
@@ -346,7 +348,7 @@ input[type="checkbox"] {
   }
 }
 
-// DISPLAYING MOVIES SECTION
+// MOVIE SECTION
 
 .moviesSection {
   display: flex;
@@ -354,7 +356,7 @@ input[type="checkbox"] {
   justify-content: center;
 
   .displayList {
-    max-width: 90%;
+    width: 90%;
     padding: 3em;
     background: transparent;
     color: $grey;
@@ -376,6 +378,10 @@ input[type="checkbox"] {
     text-transform: capitalize;
     text-align: center;
     box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease-in-out;
+    &:hover {
+      transform: translateY(-6%);
+    }
 
     h2 {
       color: $black;
@@ -390,12 +396,12 @@ input[type="checkbox"] {
     background: rgba($black, 0.8);
 
     h2 {
-      color: $red;
+      color: $green;
     }
   }
 
   .odd {
-    background: $red;
+    background: $green;
   }
 
   .even-night,
@@ -407,21 +413,26 @@ input[type="checkbox"] {
     background: rgba($dark-green, 0.5);
 
     h3 {
-      color: $red;
+      color: $green;
     }
   }
 
   .odd-night {
-    background: linear-gradient(to bottom,
+    background: linear-gradient(
+        to bottom,
         rgba(255, 255, 255, 0.15) 0%,
-        rgba(0, 0, 0, 0.15) 100%),
-      radial-gradient(at top center,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 120%) #989898;
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        #989898;
     background-blend-mode: multiply, multiply;
 
     h2 {
-      color: $red;
+      color: $green;
     }
 
     h3 {
@@ -446,7 +457,7 @@ aside {
     bottom: 0;
     background: rgba($beige, 0.6);
     z-index: 1;
-    background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
+    background-image: url(../imgs/noom-peerapong-unsplash.jpg);
     background-size: contain;
     background-position: center;
     filter: grayscale(0.6);
@@ -458,8 +469,8 @@ aside {
 
   .amountMovies {
     position: absolute;
-    max-width: 18em;
-    background: $black;
+    max-width: 40%;
+    background-color: $black;
     text-align: center;
     text-transform: uppercase;
     color: $white;
@@ -477,7 +488,7 @@ aside {
   }
 }
 
-//ADDING FORM
+//FORM
 
 .formSection {
   padding: 1em;
@@ -507,23 +518,21 @@ aside {
       }
 
       &:focus {
-        outline: 1px solid orangered;
+        outline: 1px solid $green;
       }
     }
 
     &__title {
-      color: $red;
+      color: $green;
+      margin: 2rem 0;
     }
 
     &__btn {
-      border: 2px solid $red;
-      margin-top: 1em;
-
       @extend .btn;
     }
 
     &__message {
-      color: $info;
+      color: $green;
     }
 
     &__error {

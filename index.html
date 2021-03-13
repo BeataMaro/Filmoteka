@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 <html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Filmoteka</title>
-    <link rel="icon" href="/imgs/favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="/imgs/favicon-16x16.png" type="image/x-icon" />
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <nav class="nav">
-            <div class="logo">
-                <h1 class="logo__title">Filmoteka</h1>
-                <i class="logo__dot">.</i>
-            </div>
-            <input type="checkbox" id="switch" /><label class="switch" for="switch"></label>
-        </nav>
+      <nav class="nav">
+        <div class="logo">
+          <h1 class="logo__title">Filmoteka</h1>
+          <i class="logo__dot">.</i>
+        </div>
+        <input type="checkbox" id="switch" /><label
+          class="switch"
+          for="switch"
+        ></label>
+      </nav>
     </header>
     <main>
-
-        <section class="selectBox">
-            <div class="selectBox__bcg"></div>
-            <div class="selectBox__container">
-                <select class="selectBox__filter" id="filter">
-                </select>
-            </div>
-            <a href="#" class="selectBox__button" id="allMovies">Pokaż wszystkie filmy</a>
-        </section>
-
-        <section class="moviesSection">
-
-            <div class="displayList" id="displayList"></div>
-        </section>
-        <div class="overlay">
-            <aside>
-                <div id="amountMovies" class="amountMovies"></div>
-                <div class="amountMoviesBcg"></div>
-
-            </aside>
+      <section class="selectBox">
+        <div class="selectBox__bcg"></div>
+        <div class="selectBox__container">
+          <select class="selectBox__filter" id="filter"></select>
         </div>
-        <section class="formSection">
+        <a href="#" class="selectBox__button" id="allMovies"
+          >Pokaż wszystkie filmy</a
+        >
+      </section>
 
-            <form class="form" name="createNewMovie" id="addingForm" autocomplete="off">
-                <h3 class="form__title">Dodaj nowy film:</h3>
-                <label for="createTitle">Tytuł: </label>
-                <input class="form__field" type="text" name="createTitle" id="createTitle" required
-                    autocomplete="off"><br />
+      <section class="moviesSection">
+        <div class="displayList" id="displayList"></div>
+      </section>
+      <div class="overlay">
+        <aside>
+          <div id="amountMovies" class="amountMovies"></div>
+          <div class="amountMoviesBcg"></div>
+        </aside>
+      </div>
+      <section class="formSection">
+        <form
+          class="form"
+          name="createNewMovie"
+          id="addingForm"
+          autocomplete="off"
+        >
+          <h3 class="form__title">Dodaj nowy film:</h3>
+          <label for="createTitle">Tytuł: </label>
+          <input
+            class="form__field"
+            type="text"
+            name="createTitle"
+            id="createTitle"
+            required
+            autocomplete="off"
+          /><br />
 
-                <label for="createYear">Rok: </label>
-                <input class="form__field" type="text" name="createYear" id="createYear" required
-                    autocomplete="off"><br />
-                <input class="form__btn" type="submit" id="addingBtn" value='Dodaj'>
-            </form>
-            <span class="form__message" id="message"></span><br />
-            <span class="form__error" id="error"></span>
-        </section>
+          <label for="createYear">Rok: </label>
+          <input
+            class="form__field"
+            type="text"
+            name="createYear"
+            id="createYear"
+            required
+            autocomplete="off"
+          /><br />
+          <button class="form__btn" type="submit" id="addingBtn">Dodaj</button>
+        </form>
+        <span class="form__message" id="message"></span><br />
+        <span class="form__error" id="error"></span>
+      </section>
     </main>
-    <footer class="footer"><span>&copy; Copyrights 2019.</span>
-        <p>
-            Created by <strong><a href="http://www.beatamaro.eu" target="_blank">Beata Maro.</a></strong>
-        </p>
+    <footer class="footer">
+      <span>&copy; Copyrights 2019.</span>
+      <p>
+        Icons made by
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
+          >Freepik</a
+        >
+        from
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com</a
+        >
+      </p>
+      <p>
+        Photo by
+        <a
+          href="https://unsplash.com/@imnoom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Noom Peerapong</a
+        >
+        on
+        <a
+          href="/s/photos/film?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Unsplash</a
+        >
+      </p>
     </footer>
-    <!--
-       Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-             href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> 
-
-   -->
-
     <script src="./main.js"></script>
-</body>
-
+  </body>
 </html>

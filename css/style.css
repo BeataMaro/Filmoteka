@@ -1,4 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,800,900,900i&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+body.night {
+  background-image: url(../imgs/chris-murray-western-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .btn, .selectBox__button, .formSection .form__btn {
   display: -ms-grid;
   display: grid;
@@ -6,26 +33,26 @@
   font-size: 0.8rem;
   font-weight: bold;
   padding: 1em 1.5em;
-  color: #f5f5f5;
-  background: #b80606;
+  color: #f2ebea;
+  background-color: #000000;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  outline: 2px solid #b80606;
+  outline: 2px solid #242121;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
 
 .btn:hover, .selectBox__button:hover, .formSection .form__btn:hover {
-  color: #b80606;
-  background: #000000;
-  outline-color: #b80606;
+  color: #00b060;
+  background-color: #000000;
+  outline-color: #00b060;
   outline-offset: -6px;
 }
 
 .btn-night, body.night .selectBox__button {
   position: relative;
-  background: #f2ebea;
+  background-color: #f2ebea;
   color: #000000;
   outline: 0;
   -webkit-transition: 0.3s ease-in;
@@ -56,29 +83,8 @@
   width: 100%;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  font-family: "Nunito", sans-serif;
-}
-
-body {
-  background: #f2ebea;
-}
-
-body.night {
-  background-image: url(../imgs/chris-murray-western-unsplash.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 header .nav {
-  background: rgba(221, 221, 221, 0.8);
+  background: rgba(245, 245, 245, 0.8);
   padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,7 +110,7 @@ header .nav .logo {
 
 header .nav .logo__title {
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   color: #000000;
 }
@@ -114,13 +120,12 @@ body.night header .nav .logo__title {
 }
 
 header .nav .logo__title::first-letter {
-  color: #b80606;
+  color: #ff4500;
   font-size: 4rem;
-  letter-spacing: 6px;
 }
 
 header .nav .logo__dot {
-  color: #b80606;
+  color: orangered;
   font-size: 4rem;
 }
 
@@ -154,14 +159,14 @@ input[type="checkbox"]:checked + label::after {
   z-index: 100;
 }
 
-.switch:after {
+.switch::after {
   content: "";
   position: absolute;
   top: 5px;
   left: 5px;
   width: 25px;
   height: 25px;
-  background: #b80606;
+  background: #00b060;
   border-radius: 45px;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
@@ -316,7 +321,7 @@ body.night .overlay::before {
   right: 0;
   background-image: none;
   background-color: rgba(221, 221, 221, 0.5);
-  background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
+  background-image: url(../imgs/noom-peerapong-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 80%;
@@ -342,7 +347,7 @@ body.night .selectBox__bcg {
 }
 
 .selectBox__container {
-  background: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 4px;
   padding: 1em;
   width: 70%;
@@ -350,7 +355,7 @@ body.night .selectBox__bcg {
 }
 
 body.night .selectBox__container {
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 768px) {
@@ -363,7 +368,7 @@ body.night .selectBox__container {
   cursor: pointer;
   padding: 1em 1.5em;
   width: 100%;
-  background: rgba(82, 80, 80, 0.7);
+  background-color: rgba(82, 80, 80, 0.7);
   border-radius: 2px;
   border: 10px solid #514a4a;
   color: #f2ebea;
@@ -377,7 +382,7 @@ body.night .selectBox__container {
 
 .selectBox__filter option {
   color: #525050;
-  background: #000000;
+  background-color: #000000;
 }
 
 .selectBox__button {
@@ -404,7 +409,7 @@ body.night .selectBox__container {
 }
 
 .moviesSection .displayList {
-  max-width: 90%;
+  width: 90%;
   padding: 3em;
   background: transparent;
   color: #525050;
@@ -431,6 +436,16 @@ body.night .selectBox__container {
   text-align: center;
   -webkit-box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
           box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.moviesSection .even:hover,
+.moviesSection .odd:hover,
+.moviesSection .even-night:hover,
+.moviesSection .odd-night:hover {
+  -webkit-transform: translateY(-6%);
+          transform: translateY(-6%);
 }
 
 .moviesSection .even h2,
@@ -452,11 +467,11 @@ body.night .selectBox__container {
 }
 
 .moviesSection .even h2 {
-  color: #b80606;
+  color: #00b060;
 }
 
 .moviesSection .odd {
-  background: #b80606;
+  background: #00b060;
 }
 
 .moviesSection .even-night,
@@ -469,7 +484,7 @@ body.night .selectBox__container {
 }
 
 .moviesSection .even-night h3 {
-  color: #b80606;
+  color: #00b060;
 }
 
 .moviesSection .odd-night {
@@ -479,7 +494,7 @@ body.night .selectBox__container {
 }
 
 .moviesSection .odd-night h2 {
-  color: #b80606;
+  color: #00b060;
 }
 
 .moviesSection .odd-night h3 {
@@ -503,7 +518,7 @@ aside .amountMoviesBcg {
   bottom: 0;
   background: rgba(242, 235, 234, 0.6);
   z-index: 1;
-  background-image: url(../imgs/denise-jans-film-reel-unsplash.jpg);
+  background-image: url(../imgs/noom-peerapong-unsplash.jpg);
   background-size: contain;
   background-position: center;
   -webkit-filter: grayscale(0.6);
@@ -516,8 +531,8 @@ body.night aside .amountMoviesBcg {
 
 aside .amountMovies {
   position: absolute;
-  max-width: 18em;
-  background: #000000;
+  max-width: 40%;
+  background-color: #000000;
   text-align: center;
   text-transform: uppercase;
   color: #f5f5f5;
@@ -571,20 +586,16 @@ body.night aside .amountMovies {
 }
 
 .formSection .form__field:focus {
-  outline: 1px solid orangered;
+  outline: 1px solid #00b060;
 }
 
 .formSection .form__title {
-  color: #b80606;
-}
-
-.formSection .form__btn {
-  border: 2px solid #b80606;
-  margin-top: 1em;
+  color: #00b060;
+  margin: 2rem 0;
 }
 
 .formSection .form__message {
-  color: #1c5c1c;
+  color: #00b060;
 }
 
 .formSection .form__error {
