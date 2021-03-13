@@ -1,5 +1,8 @@
-## Filmoteka
+# Movie library
  
-A simple application created using Java Script. The starting point is the array containing the movies with their release dates. Application allows you to search and add new titles.
+A simple JavaScript application. The starting point is an array containing the titles of the films along with their release dates. The application allows you to search for and add a new movie title.
+
+## Demo: [Filmoteka](https://beatamaro.github.io/Filmoteka/)
+
 
 >Final project written to pass the subject of "the basics of JavaScript programming" in University of Technology in Białystok.
